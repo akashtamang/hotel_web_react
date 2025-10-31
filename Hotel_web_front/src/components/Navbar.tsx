@@ -7,7 +7,7 @@ function Navbar(){
         <div>
 
              {/* Header */}
-  <header className="relative  bg-white/80 backdrop-blur-lg border-b border-gray-200/50 top-0 z-50 shadow-lg shadow-black/5">
+  <header className="relative   bg-white/80 backdrop-blur-lg border-b border-gray-200/50 top-0 z-50 shadow-lg shadow-black/5">
     <div className="absolute inset-0 bg-linear-to-r from-blue-500/5 to-purple-500/5" />
     <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-16">
