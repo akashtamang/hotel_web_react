@@ -1,34 +1,61 @@
 
 
+// import front from '../assets/picture/other/front.png'
+
+// function MainPage() {
+//     return (
+//         <div>
+//             {/* Main Content (Demo) */}
+//             <main
+//             style={{backgroundImage: `url(${front})`}}
+//             className="h-screen bg-cover bg-center flex-1 py-20 ">
+//                 <div className="max-w-4xl  mx-auto px-4 sm:px-6 lg:px-8 text-center">
+//                     <h1 className="text-5xl font-lora drop-shadow-xl/40 mt-60 md:text-6xl font-bold text-[#61574a]  mb-6 animate-fade-in">
+//                         Bhattidanda Fresh & Natural Guesthouse   
+//                     </h1>
+//                     <h4 className='text-black font-lora text-4xl font-bold drop-shadow-black-2xl'>We are based in Home Grown Farming</h4>
+//                     <button className=' mt-10 bg-green-700 w-fit p-2 font-libre-baskerville text-shadow-xs border-0 active:scale-95 rounded-4xl text-white text-2xl'>Rooms/Available</button>
+                    
+//                 </div> 
+//             </main>
+
+
+//         </div>
+//     )
+// }
+
+// export default MainPage;
+
+import front from "../assets/picture/other/front.png";
+
 function MainPage() {
-    return (
-        <div>
-            {/* Main Content (Demo) */}
-            <main className="flex-1 py-20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
-                        Beautiful Website
-                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            Design
-                        </span>
-                    </h1>
-                    <p className="text-xl text-gray-600 mb-8 animate-fade-in max-w-2xl mx-auto">
-                        This is a demo content area showcasing the modern header and footer design.
-                        The header features glassmorphism effects, smooth animations, and responsive navigation.
-                    </p>
-                    <div className="animate-bounce-subtle">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto flex items-center justify-center">
-                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </main>
+  return (
+    <div>
+      {/* Hero / Main Section */}
+      <main
+        className="relative h-screen bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${front})` }}
+      >
+        {/* Overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
 
+        {/* Content */}
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-lora font-bold text-white drop-shadow-lg animate-fade-in">
+            Bhattidanda Fresh & Natural Homestay
+          </h1>
 
+          <p className="mt-6 text-lg md:text-2xl text-white/90 font-libre-baskerville leading-relaxed animate-fade-in-up">
+            Experience the warmth of Nepali hospitality amidst the serene hills of Dhulikhel 🌿
+          </p>
+
+          <button className="mt-10 px-8 py-3 text-lg md:text-xl rounded-full bg-green-700 hover:bg-green-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+            View Rooms & Availability
+          </button>
         </div>
-    )
+      </main>
+    </div>
+  );
 }
 
 export default MainPage;
