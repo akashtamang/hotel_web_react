@@ -1,106 +1,81 @@
 
 
-const Rooms = () => {
-    return (
-        <div>
-<div className="w-full flex flex-col md:flex-row py-24 dark:bg-gray-800">
-  <div className="flex flex-col w-[90%] lg:w-4/5 2xl:w-3/5 mx-auto">	
-    <div className="w-full md:w-4/5 md:mx-auto  pt-3 px-4 md:px-0! text-center">
-      <h1 className="text-3xl mt-2 md:text-4xl font-semibold text-gray-800">
-        The <span className="text-emerald-600"> Feature</span> component
-      </h1>
-      <p className="text-xl font-thin mb-4 line-clamp-4 mt-4 md:line-clamp-none text-gray-500">
-        You can copy and paste it or modify however you want. Feel free to name the author in a hidden remark or to set the components as favorite. Optional you can you can contact the author and say thanks by send a message.
-      </p>
-    </div>
-    <div className="flex flex-col md:flex-row w-full">	
-      <div className="basis-1/3 w-full border border-gray-100 dark:border-gray-600! rounded-md pr-0 md:mr-4 mt-6">
-        <div className="flex flex-col relative">
-          {/* Image (c) by: https://unsplash.com/de/@vojtechbruzek */}
-          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="w-full relative z-10 max-h-80" />
-          <div className="absolute z-20 bg-emerald-600 uppercase px-3 py-1 top-3 right-3 text-white text-sm">Wifi — TV (Cable)</div>
-        </div>
-        <div className="flex flex-col px-4">
-          <p className="text-sm mt-3 text-gray-300 dark:text-gray-600 font-semibold">
-            Saison room
-          </p>
-          <h1 className="text-2xl my-2 md:text-3xl font-bold text-gray-600 ">
-            <span className="text-emerald-600">Single</span> room
-          </h1>
-          <p className="text-sm mb-3 line-clamp-3 hover:line-clamp-none text-gray-500 ">
-            You have the option of canceling by 6 pm on the day of arrival. Dogs must be requested in advance. The max lines is set to three and all over are invisible. Hover with your mouse or push with a finger on your mobile device on the text to show all lines.
-          </p>
-        </div>
-        <div className="flex flex-row py-3 px-4 border-t border-gray-100 dark:border-gray-600!">
-          <div className="w-1/2 flex flex-row dark:text-gray-400">
-            <span className="mr-1">$</span>
-            <span>89.00 ¬ Night</span>
-          </div>
-          <div className="w-1/2 text-yellow-400 text-right font-semibold">
-            ☆☆☆☆<span className="text-gray-500 font-normal">☆</span>
-          </div>
-        </div>
-      </div>	
-      <div className="basis-1/3 w-full border border-gray-100 dark:border-gray-600! rounded-md pr-0 md:mx-4 mt-6">
-        <div className="flex flex-col relative">
-          {/* Image (c) by: https://unsplash.com/de/@vojtechbruzek */}
-          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="w-full relative z-10 max-h-80" title alt />
-          <div className="absolute z-20 bg-emerald-600 uppercase px-3 py-1 top-3 right-3 text-white text-sm">Wifi — TV (Cable)</div>
-        </div>
-        <div className="flex flex-col px-4">
-          <p className="text-sm mt-3 text-gray-300 dark:text-gray-600 font-semibold">
-            Saison room
-          </p>
-          <h1 className="text-2xl my-2 md:text-3xl font-bold text-gray-600 ">
-            <span className="text-emerald-600">Love</span> Suite
-          </h1>
-          <p className="text-sm mb-3 line-clamp-3 hover:line-clamp-none text-gray-500 ">
-            In this suite there is a double bed and a bottle of sparkling wine on request at check-in. The max lines is set to three and all over are invisible. Hover with your mouse or push with a finger on your mobile device on the text to show all lines.
-          </p>
-        </div>
-        <div className="flex flex-row py-3 px-4 border-t border-gray-100 dark:border-gray-600!">
-          <div className="basis-1/2 flex flex-row dark:text-gray-400">
-            <span className="mr-1">$</span>
-            <span>119.00 ¬ Night</span>
-          </div>
-          <div className="basis-1/2 text-yellow-400 text-end font-semibold">
-            ☆☆☆<span className="text-gray-500 font-normal">☆☆</span>
-          </div>
-        </div>
-      </div>
-      <div className="basis-1/3 w-full border border-gray-100 dark:border-gray-600! rounded-md pr-0 md:ml-4 mt-6">
-        <div className="flex flex-col relative">
-          {/* Image (c) by: https://unsplash.com/de/@vojtechbruzek */}
-          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="w-full relative z-10 max-h-80" />
-          <div className="absolute z-20 bg-emerald-600 uppercase px-3 py-1 top-3 right-3 text-white text-sm">Wifi — TV (Sky)</div>
-        </div>
-        <div className="flex flex-col px-4">
-          <p className="text-sm mt-3 text-gray-300 dark:text-gray-600 font-semibold">
-            Premium room
-          </p>
-          <h1 className="text-2xl my-2 md:text-3xl font-bold text-gray-600 ">
-            <span className="text-emerald-600">Individual</span> room
-          </h1>
-          <p className="text-sm mb-3 line-clamp-3 hover:line-clamp-none text-gray-500 ">
-            We add up to two more beds. Crib possible. Breakfast must be ordered <u>separately</u>. The max lines is set to three and all over are invisible. Hover with your mouse or push with a finger on your mobile device on the text to show all lines.
-          </p>
-        </div>
-        <div className="flex flex-row py-3 px-4 border-t border-gray-100 dark:border-gray-600!">
-          <div className="w-1/2 flex flex-row dark:text-gray-400">
-            <span className="mr-1">$</span>
-            <span>149.00 ¬ Night</span>
-          </div>
-          <div className="w-1/2 text-yellow-400 text-end font-semibold">
-            ☆☆☆☆☆
-          </div>
+
+
+import first from '../assets/picture/other/r-3.jpg';
+import second from '../assets/picture/other/pic_r5_1.jpg';
+import third from '../assets/picture/other/r-7.jpg';
+
+const HotelRoomCards = () => {
+  const rooms = [
+    {
+      id: 1,
+      image: first,
+      price: '$89 / night',
+      title: 'Tamang Heritage Room',
+      description:
+        'The Tamang people often enjoy living together in groups, and even within families, they prefer to stay in the same room. That’s why this room is named “Tamang Heritage Room.” It is a spacious family room that can comfortably accommodate at least four people.',
+    },
+    {
+      id: 2,
+      image: second,
+      price: '$129 / night',
+      title: 'Himalayan Breeze Room',
+      description:
+        'During winter, you can feel the cool Himalayan breeze right from the balcony, where you can also enjoy a direct view of the mountains. The room features a comfortable king-size bed, an attached bathroom, and a spacious sofa for relaxation.',
+    },
+    {
+      id: 3,
+      image: third,
+      price: '$159 / night',
+      title: 'Mountain View Room',
+      description: 'The Mountain View Room is a unique rooftop space with breathtaking 360° Himalayan views.Guests can enjoy both sunrise and sunset from the open terrace.The room has an external bathroom and can comfortably accommodate up to 3 people.Perfect for a serene and memorable getaway.'
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-linear-to-b from-green-50 via-gray-100 to-gray-200 py-16 px-6">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800">
+          Our <span className="text-emerald-600">Homestay Rooms</span>
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {rooms.map((room) => (
+            <div
+              key={room.id}
+              className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+            >
+              {/* Image */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={room.image}
+                  alt={room.title}
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-1 rounded-lg shadow-md text-sm font-semibold">
+                  {room.price}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 text-gray-700">
+                <h3 className="text-2xl font-semibold text-emerald-700 mb-2">
+                  {room.title}
+                </h3>
+                <p className="text-gray-600 text-base leading-relaxed mb-4 min-h-12 line-clamp-2 hover:line-clamp-none">
+                  {room.description}
+                </p>
+                <button className="w-full bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  </div>
-</div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default Rooms;
+export default HotelRoomCards;

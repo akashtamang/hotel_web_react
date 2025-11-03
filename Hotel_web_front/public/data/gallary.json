@@ -1,0 +1,29 @@
+
+
+[
+  {
+    "src": "/images/room1.jpg",
+    "caption": "Tamang Heritage Room - Spacious and cozy for families",
+    "category": "Room"
+  },
+  {
+    "src": "/images/mountain_view.jpg",
+    "caption": "Peaceful view of the Himalayas from our terrace",
+    "category": "Nature"
+  },
+  {
+    "src": "/images/food1.jpg",
+    "caption": "Delicious homegrown Tamang dishes",
+    "category": "Food"
+  },
+  {
+    "src": "/images/people1.jpg",
+    "caption": "Guests enjoying local hospitality",
+    "category": "People"
+  },
+  {
+    "src": "/images/room2.jpg",
+    "caption": "Mountain View Room - perfect for 3 guests",
+    "category": "Room"
+  }
+]

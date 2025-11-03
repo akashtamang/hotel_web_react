@@ -7,7 +7,7 @@ function Navbar(){
         <div>
 
              {/* Header */}
-  <header className="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-200/50 z-50 shadow-lg shadow-black/5">
+  <header className="fixed top-0 w-full bg-green/80 backdrop-blur-lg border-b border-gray-200/50 z-50 shadow-lg shadow-black/5">
     <div className="absolute inset-0 bg-linear-to-r from-blue-500/5 to-purple-500/5" />
     <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-16">
@@ -21,25 +21,25 @@ function Navbar(){
         </div>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+          <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 relative group">
             Home
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+          <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 relative group">
             About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+          <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 relative group">
             Services
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+          <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 relative group">
             Activity
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+          <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 relative group">
             Contact
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full" />
           </a>
         </div>
         {/* CTA Button & Mobile Menu */}

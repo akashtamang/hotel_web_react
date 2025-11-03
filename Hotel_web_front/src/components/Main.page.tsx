@@ -1,31 +1,5 @@
 
 
-// import front from '../assets/picture/other/front.png'
-
-// function MainPage() {
-//     return (
-//         <div>
-//             {/* Main Content (Demo) */}
-//             <main
-//             style={{backgroundImage: `url(${front})`}}
-//             className="h-screen bg-cover bg-center flex-1 py-20 ">
-//                 <div className="max-w-4xl  mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//                     <h1 className="text-5xl font-lora drop-shadow-xl/40 mt-60 md:text-6xl font-bold text-[#61574a]  mb-6 animate-fade-in">
-//                         Bhattidanda Fresh & Natural Guesthouse   
-//                     </h1>
-//                     <h4 className='text-black font-lora text-4xl font-bold drop-shadow-black-2xl'>We are based in Home Grown Farming</h4>
-//                     <button className=' mt-10 bg-green-700 w-fit p-2 font-libre-baskerville text-shadow-xs border-0 active:scale-95 rounded-4xl text-white text-2xl'>Rooms/Available</button>
-                    
-//                 </div> 
-//             </main>
-
-
-//         </div>
-//     )
-// }
-
-// export default MainPage;
-
 import front from "../assets/picture/other/front.png";
 
 function MainPage() {

@@ -105,11 +105,11 @@ const MiddlePage = () => {
       {/* Content */}
       <div className="relative max-w-5xl mx-auto text-center px-6">
         <h2 className="text-4xl md:text-5xl font-lora font-bold text-[#2f402f] mb-8 drop-shadow-md">
-          A Peaceful Escape in the Heart of Nature 🌿
+          A Peaceful Escape in the Heart of Nature 
         </h2>
 
         <p className="text-gray-800 text-shado-sm text-lg md:text-xl leading-relaxed font-libre-baskerville mb-14">
-          Bhattidanda Fresh & Natural Homestay in Dhulikhel is a peaceful
+          Bhattidanda Fresh & Natural Guesthouse/Homestay in Dhulikhel is a peaceful
           sanctuary surrounded by the Himalayas. More than just a stay, it
           offers a heartfelt connection to nature, culture, and community.
           Guests are welcomed like family, enjoy fresh organic meals from the
