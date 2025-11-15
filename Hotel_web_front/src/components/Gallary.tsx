@@ -276,7 +276,7 @@ const Gallery: React.FC = () => {
       : photos.filter((photo) => photo.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-green-50 py-16 px-6">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-green-50 py-16 px-6">
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-10">
         <h1 className="text-4xl font-bold text-gray-800 mb-3">

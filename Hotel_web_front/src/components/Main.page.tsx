@@ -1,6 +1,7 @@
 
 
 import front from "../assets/picture/other/front.png";
+import BookingSection from "./Booking.section";
 
 function MainPage() {
   return (
@@ -28,6 +29,8 @@ function MainPage() {
           </button>
         </div>
       </main>
+      {/* Booking Section */}
+      <BookingSection />
     </div>
   );
 }

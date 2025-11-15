@@ -1,3 +1,5 @@
+
+import BookingForm from "../pages/Booking.form";
 import Footer from "./Footer";
 import Gallery from "./Gallary";
 import MainPage from "./Main.page";
@@ -13,6 +15,8 @@ function HeroPage(){
         <div>
             <Navbar />
             <MainPage />
+            <BookingForm />
+            
             <MiddlePage />
             <HotelRoomCards />
             <Gallery />
