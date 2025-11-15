@@ -1,4 +1,4 @@
-import HeroPage from "./components/Hero.page";
+import HeroPage from "./pages/Hero.page";
 
 
 function App(){

@@ -2,7 +2,7 @@ import logo from "../assets/logo/logo.png";
 
 function Footer() {
     return (
-        <footer className="bg-gradient-to-br from-emerald-950 via-emerald-900 to-stone-900 text-gray-200 relative overflow-hidden">
+        <footer className="bg-linear-to-br from-emerald-950 via-emerald-900 to-stone-900 text-gray-200 relative overflow-hidden">
             {/* soft overlay */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-10" />
 

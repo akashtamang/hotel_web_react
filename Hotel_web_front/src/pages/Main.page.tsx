@@ -1,7 +1,7 @@
 
 
 import front from "../assets/picture/other/front.png";
-import BookingSection from "./Booking.section";
+import BookingSection from "../components/Booking.section";
 
 function MainPage() {
   return (

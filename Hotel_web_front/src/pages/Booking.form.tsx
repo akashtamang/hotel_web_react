@@ -1,7 +1,10 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import nature from '../assets/picture/other/nature.jpg'
+
+import roomp1 from '../assets/picture/room4/pic_r4_2.jpg'
+import roomp2 from '../assets/picture/other/r-7.jpg'
+import roomp3 from '../assets/picture/other/pic_r5_1.jpg'
 
 const BookingForm = () => {
     const [arrivalDate, setArrivalDate] = useState<Date | null >(new Date());
@@ -28,16 +31,16 @@ const BookingForm = () => {
                 {/* Header Images */}
                 <div className="flex justify-center space-x-6 bg-blue-50 py-6">
                     <img
-                        src={nature}
-                        className="rounded-full size-50 shadow-md overflow-hidden"
+                        src={roomp1}
+                        className="rounded-sm h-30 w-auto shadow-md"
                     />
                     <img
-                        src="https://via.placeholder.com/100x100?text=Room+2"
-                        className="rounded-lg shadow-md"
+                        src={roomp2}
+                        className="rounded-sm h-30 w-auto shadow-md"
                     />
                     <img
-                        src="https://via.placeholder.com/100x100?text=Room+3"
-                        className="rounded-lg shadow-md"
+                        src={roomp3}
+                        className="rounded-sm h-30 w-auto shadow-md"
                     />
                 </div>
 

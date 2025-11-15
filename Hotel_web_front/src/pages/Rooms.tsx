@@ -37,7 +37,7 @@ const HotelRoomCards = () => {
     <div className="min-h-screen bg-linear-to-b from-green-50 via-gray-100 to-gray-200 py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800">
-          Our <span className="text-emerald-600">Homestay Rooms</span>
+          Our <span className="text-emerald-600">Homestay/Guesthouse Rooms</span>
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
