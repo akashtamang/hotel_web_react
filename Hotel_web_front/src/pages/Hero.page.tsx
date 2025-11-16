@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Rooms from "./Rooms";
 
 import HotelRoomCards from "./Services";
+import HotelReviews from "./Review";
 
 
 function HeroPage(){
@@ -19,6 +20,7 @@ function HeroPage(){
             <HotelRoomCards />
             <Gallery />
             <Rooms />
+            <HotelReviews />
             <Footer />
 
         </div>
