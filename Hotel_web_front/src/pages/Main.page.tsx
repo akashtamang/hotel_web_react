@@ -1,5 +1,6 @@
 
 
+import { Link } from "react-router-dom";
 import front from "../assets/picture/other/front.png";
 import BookingSection from "../components/Booking.section";
 
@@ -24,9 +25,12 @@ function MainPage() {
             Experience the warmth of Nepali hospitality amidst the serene hills of Dhulikhel 🌿
           </p>
 
-          <button className="mt-10 px-8 py-3 text-lg md:text-xl rounded-full bg-green-700 hover:bg-green-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+          <Link
+            to="/rooms"
+            className="inline-flex mt-10 px-8 py-3 text-lg md:text-xl rounded-full bg-green-700 hover:bg-green-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
+          >
             View Rooms & Availability
-          </button>
+          </Link>
         </div>
       </main>
       {/* Booking Section */}

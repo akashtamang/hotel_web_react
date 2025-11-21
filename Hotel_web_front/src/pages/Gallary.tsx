@@ -1,31 +1,39 @@
 
-import React, { useEffect, useState } from "react";
-
-
-interface Photo {
-  src: string;
-  caption: string;
-  category: string;
-}
+import React, { useEffect, useMemo, useState } from "react";
+import type { GalleryPhoto } from "../data/gallery";
+import { defaultGalleryPhotos } from "../data/gallery";
 
 const Gallery: React.FC = () => {
-  const [photos, setPhotos] = useState<Photo[]>([]);
-  const [selectedImage, setSelectedImage] = useState<Photo | null>(null);
+  const [photos, setPhotos] = useState<GalleryPhoto[]>([]);
+  const [selectedImage, setSelectedImage] = useState<GalleryPhoto | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
   useEffect(() => {
-    fetch("/data/gallery.json")
-      .then((res) => res.json())
-      .then((data: Photo[]) => setPhotos(data))
-      .catch((err) => console.error("Error loading gallery:", err));
+    // First try to load from localStorage (updated by admin)
+    const stored = localStorage.getItem("gallery-photos");
+    if (stored) {
+      try {
+        setPhotos(JSON.parse(stored));
+      } catch {
+        setPhotos(defaultGalleryPhotos);
+      }
+    } else {
+      setPhotos(defaultGalleryPhotos);
+    }
   }, []);
 
-  const categories = ["All", "Room", "Nature", "Food", "People"];
+  const categories = useMemo(() => {
+    const unique = Array.from(new Set(photos.map((photo) => photo.category)));
+    return ["All", ...unique];
+  }, [photos]);
 
-  const filteredPhotos =
-    activeCategory === "All"
-      ? photos
-      : photos.filter((photo) => photo.category === activeCategory);
+  const filteredPhotos = useMemo(
+    () =>
+      activeCategory === "All"
+        ? photos
+        : photos.filter((photo) => photo.category === activeCategory),
+    [activeCategory, photos]
+  );
 
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-green-50 py-16 px-6">
@@ -57,7 +65,7 @@ const Gallery: React.FC = () => {
       </div>
 
       {/* Gallery Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filteredPhotos.map((photo, index) => (
           <div
             key={index}

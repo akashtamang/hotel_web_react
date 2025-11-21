@@ -11,6 +11,7 @@ import HotelRoomCards from "./Services";
 import HotelReviews from "./Review";
 
 
+
 function HeroPage(){
     return (
         <div>
@@ -20,6 +21,7 @@ function HeroPage(){
             <HotelRoomCards />
             <Gallery />
             <Rooms />
+          
             <HotelReviews />
             <Footer />
 

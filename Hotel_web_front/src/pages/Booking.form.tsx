@@ -1,12 +1,20 @@
 import { useState } from "react";
+import type { FormEvent } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import type { Room } from "../data/rooms";
 
 import roomp1 from '../assets/picture/room4/pic_r4_2.jpg'
 import roomp2 from '../assets/picture/other/r-7.jpg'
 import roomp3 from '../assets/picture/other/pic_r5_1.jpg'
 
-const BookingForm = () => {
+interface BookingFormProps {
+  room?: Room | null;
+  onClose?: () => void;
+  isModal?: boolean;
+}
+
+const BookingForm = ({ room, onClose, isModal = false }: BookingFormProps) => {
     const [arrivalDate, setArrivalDate] = useState<Date | null >(new Date());
     const [departureDate, setDepartureDate] = useState<Date | null>(
         new Date(new Date().setDate(new Date().getDate() + 1))
@@ -24,36 +32,51 @@ const BookingForm = () => {
         setOpenArrival(false);
     };
 
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        // TODO: Add booking submission logic
+        alert("Booking request submitted! We'll contact you soon.");
+        if (onClose) onClose();
+    };
+
+    const roomImages = room?.images || [roomp1, roomp2, roomp3];
+    const roomName = room?.name || "Hotel Room";
+
     return (
-        <div className="min-h-screen bg-linear-to-b from-sky-100 to-blue-300 flex justify-center py-10 px-4">
-            
-            <div className="bg-white shadow-2xl rounded-2xl w-full max-w-3xl overflow-hidden">
+        <div className={`${isModal ? 'fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 overflow-y-auto' : 'min-h-screen bg-linear-to-b from-sky-100 to-blue-300 flex justify-center py-8 px-3'}`}>
+            <div className={`bg-white shadow-2xl rounded-2xl w-full max-w-2xl overflow-hidden relative ${isModal ? 'my-8' : ''}`}>
+                {isModal && onClose && (
+                    <button
+                        onClick={onClose}
+                        className="absolute top-4 right-4 z-10 bg-white/80 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 font-bold"
+                    >
+                        ✕
+                    </button>
+                )}
                 {/* Header Images */}
-                <div className="flex justify-center space-x-6 bg-blue-50 py-6">
-                    <img
-                        src={roomp1}
-                        className="rounded-sm h-30 w-auto shadow-md"
-                    />
-                    <img
-                        src={roomp2}
-                        className="rounded-sm h-30 w-auto shadow-md"
-                    />
-                    <img
-                        src={roomp3}
-                        className="rounded-sm h-30 w-auto shadow-md"
-                    />
+                <div className="flex justify-center space-x-4 bg-blue-50 py-4 px-4">
+                    {roomImages.slice(0, 3).map((img, idx) => (
+                        <img
+                            key={idx}
+                            src={img}
+                            alt={`${roomName} view ${idx + 1}`}
+                            className="rounded-md h-24 w-24 shadow-md object-cover"
+                        />
+                    ))}
                 </div>
 
                 {/* Title */}
-                <div className="text-center my-6">
-                    <h1 className="text-2xl font-bold text-gray-800">Hotel Booking</h1>
-                    <p className="text-gray-500 text-sm">
-                        Experience something new every moment
+                <div className="text-center my-4 px-4">
+                    <h1 className="text-xl font-bold text-gray-800">
+                        {room ? `Book ${room.name}` : "Hotel Booking"}
+                    </h1>
+                    <p className="text-gray-500 text-xs">
+                        {room ? `Rate: ${room.price}` : "Experience something new every moment"}
                     </p>
                 </div>
 
                 {/* Form */}
-                <form className="space-y-6 px-8 pb-10">
+                <form onSubmit={handleSubmit} className="space-y-5 px-6 pb-8">
                     {/* Name */}
                     <div className="grid md:grid-cols-2 gap-4">
                         <div>
@@ -92,11 +115,20 @@ const BookingForm = () => {
                             <label className="block text-sm font-semibold text-gray-700 mb-1">
                                 Room Type
                             </label>
-                            <select className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                <option>Please Select</option>
-                                <option>Single Room</option>
-                                <option>Double Room</option>
-                                <option>Family Suite</option>
+                            <select 
+                                className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                defaultValue={room?.name || ""}
+                            >
+                                <option value="">Please Select</option>
+                                {room ? (
+                                    <option value={room.name}>{room.name}</option>
+                                ) : (
+                                    <>
+                                        <option>Single Room</option>
+                                        <option>Double Room</option>
+                                        <option>Family Suite</option>
+                                    </>
+                                )}
                             </select>
                         </div>
 
@@ -106,7 +138,7 @@ const BookingForm = () => {
                             </label>
                             <input
                                 type="number"
-                                placeholder="e.g., 2"
+                                placeholder={room?.capacity || "e.g., 2"}
                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                             />
                         </div>

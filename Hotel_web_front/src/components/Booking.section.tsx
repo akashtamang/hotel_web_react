@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { DateRangePicker } from "react-date-range";
+import type { RangeKeyDict } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -18,10 +19,10 @@ const BookingSection = () => {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
 
-  const guestButtonRef = useRef(null);
-  const popupRef = useRef(null);
-  const calendarRef = useRef(null);
-  const calendarButtonRef = useRef(null);
+  const guestButtonRef = useRef<HTMLButtonElement | null>(null);
+  const popupRef = useRef<HTMLDivElement | null>(null);
+  const calendarRef = useRef<HTMLDivElement | null>(null);
+  const calendarButtonRef = useRef<HTMLButtonElement | null>(null);
 
   // 📌 Popup open/close logic with direction
   const toggleGuestPopup = () => {
@@ -51,12 +52,13 @@ const BookingSection = () => {
 
   // 📌 Close popup if clicked outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
       if (
         popupRef.current &&
-        !popupRef.current.contains(event.target) &&
+        !popupRef.current.contains(target) &&
         guestButtonRef.current &&
-        !guestButtonRef.current.contains(event.target)
+        !guestButtonRef.current.contains(target)
       ) {
         setIsGuestOpen(false);
       }
@@ -64,8 +66,8 @@ const BookingSection = () => {
       if (
         calendarRef.current &&
         calendarButtonRef.current &&
-        !calendarRef.current.contains(event.target) &&
-        !calendarButtonRef.current.contains(event.target)
+        !calendarRef.current.contains(target) &&
+        !calendarButtonRef.current.contains(target)
       ) {
         setIsCheckInOpen(false);
         setIsCheckOutOpen(false);
@@ -115,9 +117,9 @@ const BookingSection = () => {
                       key: "selection",
                     },
                   ]}
-                  onChange={(ranges) => {
-                    setCheckInDate(ranges.selection.startDate);
-                    setCheckOutDate(ranges.selection.endDate);
+                  onChange={(ranges: RangeKeyDict) => {
+                    if (ranges.selection.startDate) setCheckInDate(ranges.selection.startDate);
+                    if (ranges.selection.endDate) setCheckOutDate(ranges.selection.endDate);
                   }}
                   moveRangeOnFirstSelection={false}
                   rangeColors={["#16a34a"]}
@@ -152,9 +154,9 @@ const BookingSection = () => {
                       key: "selection",
                     },
                   ]}
-                  onChange={(ranges) => {
-                    setCheckInDate(ranges.selection.startDate);
-                    setCheckOutDate(ranges.selection.endDate);
+                  onChange={(ranges: RangeKeyDict) => {
+                    if (ranges.selection.startDate) setCheckInDate(ranges.selection.startDate);
+                    if (ranges.selection.endDate) setCheckOutDate(ranges.selection.endDate);
                   }}
                   moveRangeOnFirstSelection={false}
                   rangeColors={["#16a34a"]}
