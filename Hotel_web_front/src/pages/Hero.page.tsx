@@ -7,7 +7,7 @@ import MiddlePage from "../components/Middle.page";
 import Navbar from "../components/Navbar";
 import Rooms from "./Rooms";
 
-import HotelRoomCards from "./Services";
+import Activity from "./Activity";
 import HotelReviews from "./Review";
 
 
@@ -18,10 +18,10 @@ function HeroPage(){
             <Navbar />
             <MainPage />            
             <MiddlePage />
-            <HotelRoomCards />
+            <Activity />
             <Gallery />
             <Rooms />
-          
+        
             <HotelReviews />
             <Footer />
 
