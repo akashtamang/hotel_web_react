@@ -107,11 +107,13 @@ const Activity = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  className={`w-full py-3 px-4 rounded-lg font-semibold text-white bg-linear-to-r ${activity.color} hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
-                >
-                  Learn More
-                </button>
+                <a href={`/activity/${activity.id}`} target="_blank" rel="noopener noreferrer">
+                  <button
+                    className={`w-full py-3 px-4 rounded-lg font-semibold text-white bg-linear-to-r ${activity.color} hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
+                  >
+                    Learn More
+                  </button>
+                </a>
               </div>
 
               {/* Hover Border */}
@@ -122,7 +124,7 @@ const Activity = () => {
       </div>
 
       {/* Additional Info Section */}
-      <div className="max-w-7xl mx-auto mt-20 bg-white rounded-2xl shadow-lg p-12">
+      {/* <div className="max-w-7xl mx-auto mt-20 bg-white rounded-2xl shadow-lg p-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <div className="text-4xl font-bold text-emerald-600 mb-2">6+</div>
@@ -137,10 +139,10 @@ const Activity = () => {
             <p className="text-gray-600 font-semibold">Skill Levels</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Booking CTA */}
-      <div className="max-w-7xl mx-auto mt-16 bg-linear-to-r from-emerald-600 to-green-600 rounded-2xl shadow-2xl p-12 text-white text-center">
+      {/* <div className="max-w-7xl mx-auto mt-16 bg-linear-to-r from-emerald-600 to-green-600 rounded-2xl shadow-2xl p-12 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready for an Adventure?</h2>
         <p className="text-lg mb-8 opacity-90">
           Book your favorite activity today and create unforgettable memories in Dhulikhel.
@@ -148,7 +150,7 @@ const Activity = () => {
         <button className="px-8 py-4 bg-white text-emerald-600 font-bold rounded-lg hover:bg-emerald-50 transform hover:scale-105 transition-all duration-300 shadow-lg">
           Book Now
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

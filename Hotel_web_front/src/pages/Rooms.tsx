@@ -2,11 +2,9 @@
 
 
 
-import { useNavigate } from "react-router-dom";
 import { rooms as roomsData } from "../data/rooms";
 
 const HotelRoomCards = () => {
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-linear-to-b from-green-50 via-gray-100 to-gray-200 py-16 px-6">
@@ -41,12 +39,13 @@ const HotelRoomCards = () => {
                 <p className="text-gray-600 text-base leading-relaxed mb-4 min-h-12 line-clamp-2 hover:line-clamp-none">
                   {room.description}
                 </p>
-                <button
-                  onClick={() => navigate(`/rooms/${room.id}`)}
-                  className="w-full bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                >
-                  Book Now
-                </button>
+                <a href={`/rooms/${room.id}`} target="_blank" rel="noopener noreferrer">
+                  <button
+                    className="w-full bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                  >
+                    Book Now
+                  </button>
+                </a>
               </div>
             </div>
           ))}

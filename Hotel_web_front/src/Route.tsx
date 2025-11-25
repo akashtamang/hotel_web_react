@@ -8,6 +8,7 @@ import BookingForm from "./pages/Booking.form";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import ActivityDetails from "./pages/ActivityDetails";
 import { getRoomById } from "./data/rooms";
 
 const BookingFormPage = () => {
@@ -32,6 +33,7 @@ const AppRoutes = () => {
         <Route path="/rooms/:id" element={<RoomDetailsPage />} />
         <Route path="/booking" element={<BookingFormPage />} />
         <Route path="/booking/:roomId" element={<BookingFormPage />} />
+        <Route path="/activity/:id" element={<ActivityDetails />} />
         <Route path="/admin/*" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>

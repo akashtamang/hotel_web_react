@@ -22,9 +22,11 @@ import img2a from "../assets/picture/other/pic_r5_1.jpg";
 import img2b from "../assets/picture/room4/pic_r4_2.jpg";
 import img2c from "../assets/picture/other/roofpic.jpg";
 
-import img3a from "../assets/picture/other/r-7.jpg";
-import img3b from "../assets/picture/room7/IMG_5745.jpg";
-import img3c from "../assets/picture/other/front_pic.jpg";
+import img3a from "../assets/picture/room6/pic_r6.jpg"
+
+import img4a from "../assets/picture/other/r-7.jpg";
+import img4b from "../assets/picture/room7/IMG_5745.jpg";
+import img4c from "../assets/picture/other/front_pic.jpg";
 
 export const rooms: Room[] = [
   {
@@ -69,6 +71,23 @@ export const rooms: Room[] = [
   },
   {
     id: 3,
+    slug: "himalayan-breeze-room",
+    name: "Himalayan Breeze Room",
+    price: "NPR 14,000 / night",
+    description:
+      "Balcony-facing room that captures the cool mountain breeze and frames the snow line during winter.",
+    longDescription:
+      "Equipped with a plush king bed, a cloud-like sofa, and an attached bathroom, the Himalayan Breeze Room is curated for slow mornings and balcony breakfasts. Enjoy front-row seats to sunrise colors and drifting clouds.",
+    size: "42 m²",
+    capacity: "2 adults + 1 child",
+    bedType: "King bed",
+    view: "Direct Himalayan range",
+    amenities: ["Heated shower", "Balcony daybed", "Tea & coffee bar", "Room service", "Yoga mat set"],
+    policies: ["Check-in after 2:00 PM", "Check-out before 11:00 AM", "No smoking inside", "Child-friendly"],
+    images: [img3a,]
+  },
+  {
+    id: 4,
     slug: "mountain-view-room",
     name: "Mountain View Room",
     price: "NPR 16,200 / night",
@@ -88,7 +107,7 @@ export const rooms: Room[] = [
       "Daily housekeeping",
     ],
     policies: ["Check-in after 2:00 PM", "Check-out before 11:00 AM", "Not suitable for toddlers", "No parties"],
-    images: [img3a, img3b, img3c],
+    images: [img4a, img4b, img4c],
   },
 ];
 
