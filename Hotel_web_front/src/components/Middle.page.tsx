@@ -3,7 +3,7 @@
 
 import sunrise from "../assets/picture/hotel/sunrise.png";
 import toast from "../assets/picture/food/toast.jpg";
-import nature from "../assets/picture/nature/nature.jpg";
+import nature from "../assets/picture/other/nature.jpg";
 
 const MiddlePage = () => {
   return (

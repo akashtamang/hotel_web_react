@@ -1,7 +1,7 @@
 
 
 import { Link } from "react-router-dom";
-import front from "../assets/picture/other/front.png";
+import front from "../assets/picture/nature/front.png";
 import BookingSection from "../components/Booking.section";
 
 function MainPage() {
