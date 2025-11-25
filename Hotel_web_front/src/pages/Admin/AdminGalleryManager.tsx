@@ -11,6 +11,7 @@ const AdminGalleryManager: React.FC = () => {
     caption: "",
     category: "Rooms",
   });
+  const [imageFile, setImageFile] = useState<File | null>(null);
   const [formError, setFormError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -32,35 +33,56 @@ const AdminGalleryManager: React.FC = () => {
     setTimeout(() => setSuccessMessage(""), 3000);
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file type
+      if (!file.type.startsWith("image/")) {
+        setFormError("Please select a valid image file.");
+        return;
+      }
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setFormError("Image size must be less than 5MB.");
+        return;
+      }
+      setImageFile(file);
+      setFormError("");
+    }
+  };
+
   const handleAddPhoto = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError("");
 
-    if (!formData.src.trim() || !formData.caption.trim()) {
-      setFormError("Image URL and caption are required.");
+    if (!imageFile || !formData.caption.trim()) {
+      setFormError("Image file and caption are required.");
       return;
     }
 
-    // Validate URL format
-    try {
-      new URL(formData.src);
-    } catch {
-      setFormError("Please enter a valid image URL.");
-      return;
-    }
+    // Convert file to base64
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const base64String = event.target?.result as string;
 
-    const id = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-    const newPhoto: GalleryPhoto = {
-      id,
-      src: formData.src.trim(),
-      caption: formData.caption.trim(),
-      category: formData.category.trim() || "Rooms",
+      const id = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+      const newPhoto: GalleryPhoto = {
+        id,
+        src: base64String,
+        caption: formData.caption.trim(),
+        category: formData.category.trim() || "Rooms",
+      };
+
+      const updatedPhotos = [newPhoto, ...photos];
+      setPhotos(updatedPhotos);
+      saveToStorage(updatedPhotos);
+      setFormData({ src: "", caption: "", category: "Rooms" });
+      setImageFile(null);
+      // Reset file input
+      const fileInput = document.getElementById("imageInput") as HTMLInputElement;
+      if (fileInput) fileInput.value = "";
     };
-
-    const updatedPhotos = [newPhoto, ...photos];
-    setPhotos(updatedPhotos);
-    saveToStorage(updatedPhotos);
-    setFormData({ src: "", caption: "", category: "Rooms" });
+    reader.readAsDataURL(imageFile);
   };
 
   const handleRemovePhoto = (id: string) => {
@@ -140,17 +162,20 @@ const AdminGalleryManager: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex flex-col">
               <label className="text-sm font-semibold text-gray-700 mb-2">
-                Image URL
+                Upload Image
               </label>
               <input
-                type="url"
-                value={formData.src}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, src: e.target.value }))
-                }
-                placeholder="https://example.com/photo.jpg"
+                id="imageInput"
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
                 className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
+              {imageFile && (
+                <p className="text-xs text-green-600 mt-1">
+                  ✓ {imageFile.name} ({(imageFile.size / 1024).toFixed(2)} KB)
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -172,15 +197,24 @@ const AdminGalleryManager: React.FC = () => {
               <label className="text-sm font-semibold text-gray-700 mb-2">
                 Category
               </label>
-              <input
-                type="text"
+              <select
                 value={formData.category}
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, category: e.target.value }))
                 }
-                placeholder="e.g., Rooms, Food, Nature"
                 className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              />
+              >
+                <option value="">Select Category</option>
+                {Array.from(new Set(photos.map((p) => p.category))).map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+                <option value="Rooms">Rooms</option>
+                <option value="Food">Food</option>
+                <option value="Nature">Nature</option>
+                <option value="People">People</option>
+              </select>
             </div>
           </div>
 

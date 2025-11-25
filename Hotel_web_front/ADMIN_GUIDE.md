@@ -5,7 +5,7 @@ Your hotel website now has a fully functional **Admin Panel** for managing the g
 
 ## Accessing the Admin Panel
 
-1. **Go to:** `http://localhost:5173/admin`
+1. **Go to:** `http://localhost:5174/admin`
 2. **Enter Password:** `admin123` (change this in `AdminLogin.tsx`)
 3. **Access:** Gallery Manager interface
 
@@ -14,10 +14,11 @@ Your hotel website now has a fully functional **Admin Panel** for managing the g
 ### 🖼️ Gallery Manager
 
 #### Add Photos
-- **Image URL**: Enter a valid image URL (must be a working web link)
+- **Upload Image**: Click to select and upload an image file from your device (JPG, PNG, WebP, etc.)
+- **File Size Limit**: Maximum 5MB per image
 - **Caption**: Add a descriptive title for the photo
-- **Category**: Organize photos by category (Rooms, Food, Nature, etc.)
-- Click **"Add Photo"** to add to gallery
+- **Category**: Select from existing categories (Rooms, Food, Nature, People) or add new ones
+- Click **"Add Photo"** to upload to gallery
 
 #### Manage Photos
 - **View**: See all photos in a table with previews
@@ -41,10 +42,12 @@ src/pages/Admin/
 
 ## How It Works
 
-1. **Data Storage**: Gallery changes are saved to browser localStorage
-2. **Client Display**: The gallery page loads photos from localStorage (if available) or uses defaults
-3. **Persistence**: Changes persist across browser sessions
-4. **Password Protected**: Simple password protection (change in AdminLogin.tsx)
+1. **Data Storage**: Gallery photos are converted to base64 and saved to browser localStorage
+2. **Image Format**: Images are stored as base64 strings for easy persistence
+3. **Client Display**: The gallery page loads photos from localStorage (if available) or uses defaults
+4. **Persistence**: Changes persist across browser sessions
+5. **Category Dropdown**: Dynamically shows all existing categories from current gallery
+6. **Password Protected**: Simple password protection (change in AdminLogin.tsx)
 
 ## Changing Admin Password
 
@@ -77,15 +80,25 @@ const ADMIN_PASSWORD = "your_secure_password_123";
 
 ## Troubleshooting
 
-**Q: Photos not showing after adding?**
-- Check if image URL is accessible and correct format (jpg, png, webp)
-- Open browser DevTools Console to see any errors
+**Q: What image formats are supported?**
+- JPG, PNG, WebP, GIF, and other common image formats are supported
+- Maximum file size: 5MB
+
+**Q: Photos not showing after uploading?**
+- Check browser console for errors
+- Make sure file size is under 5MB
+- Try refreshing the page
+
+**Q: Category dropdown is empty?**
+- The dropdown is populated from existing gallery photos
+- If you're adding the first photo, select from preset categories: Rooms, Food, Nature, People
+- After adding a photo, custom categories will appear in the dropdown
 
 **Q: Can't access admin panel?**
-- Make sure you're at `http://localhost:5173/admin`
+- Make sure you're at `http://localhost:5174/admin`
 - Try clearing browser cache and localStorage
 - Check browser console for errors
 
 **Q: Need to see all changes?**
 - Open DevTools → Application → Local Storage
-- Look for "gallery-photos" key
+- Look for "gallery-photos" key to see stored data
