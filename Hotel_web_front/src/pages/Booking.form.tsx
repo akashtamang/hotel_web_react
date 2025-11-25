@@ -4,9 +4,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import type { Room } from "../data/rooms";
 
-import roomp1 from '../assets/picture/room4/pic_r4_2.jpg'
-import roomp2 from '../assets/picture/other/r-7.jpg'
-import roomp3 from '../assets/picture/other/pic_r5_1.jpg'
+import roomp1 from '../assets/picture/room4/pic_r4.jpg'
+import roomp2 from '../assets/picture/room7/r-7.jpg'
+import roomp3 from '../assets/picture/room5/pic_r5.jpg'
 
 interface BookingFormProps {
   room?: Room | null;

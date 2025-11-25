@@ -7,13 +7,13 @@ export type GalleryPhoto = {
 
 import sunrise from "../assets/picture/other/sunrise.png";
 import sunset from "../assets/picture/other/sunset.jpg";
-import roof from "../assets/picture/other/roof.jpg";
-import frontPic from "../assets/picture/other/front_pic.jpg";
-import pancake from "../assets/picture/other/pancake.jpg";
-import khajaSet from "../assets/picture/other/khaja_set.jpg";
-import room3 from "../assets/picture/other/r-3.jpg";
-import room5 from "../assets/picture/other/pic_r5_1.jpg";
-import room7 from "../assets/picture/other/r-7.jpg";
+import roof from "../assets/picture/hotel/roof.jpg";
+import frontPic from "../assets/picture/hotel/front_pic.jpg";
+import pancake from "../assets/picture/food/pancake.jpg";
+import khajaSet from "../assets/picture/food/khaja_set.jpg";
+import room3 from "../assets/picture/room3/r-3.jpg";
+import room5 from "../assets/picture/room5/pic_r5.jpg";
+import room7 from "../assets/picture/room7/r-7.jpg";
 
 export const defaultGalleryPhotos: GalleryPhoto[] = [
   {

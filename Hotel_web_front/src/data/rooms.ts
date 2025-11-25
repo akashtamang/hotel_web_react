@@ -14,19 +14,19 @@ export type Room = {
   images: string[];
 };
 
-import img1a from "../assets/picture/other/r-3.jpg";
+import img1a from "../assets/picture/room3/r-3.jpg";
 import img1b from "../assets/picture/room3/pic_r3_2.jpg";
 import img1c from "../assets/picture/room3/t_r3_bath_1.jpg";
 
-import img2a from "../assets/picture/other/pic_r5_1.jpg";
-import img2b from "../assets/picture/room4/pic_r4_2.jpg";
-import img2c from "../assets/picture/other/roofpic.jpg";
+import img2a from "../assets/picture/room5/pic_r5.jpg";
+import img2b from "../assets/picture/room4/pic_r4.jpg";
+import img2c from "../assets/picture/hotel/roof.jpg";
 
-import img3a from "../assets/picture/room6/pic_r6.jpg"
+import img3a from "../assets/picture/room6/pic_r6.jpg";
 
-import img4a from "../assets/picture/other/r-7.jpg";
+import img4a from "../assets/picture/room7/r-7.jpg";
 import img4b from "../assets/picture/room7/IMG_5745.jpg";
-import img4c from "../assets/picture/other/front_pic.jpg";
+import img4c from "../assets/picture/hotel/front_pic.jpg";
 
 export const rooms: Room[] = [
   {
