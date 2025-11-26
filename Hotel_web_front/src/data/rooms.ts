@@ -23,10 +23,16 @@ import img2b from "../assets/picture/room4/pic_r4.jpg";
 import img2c from "../assets/picture/hotel/roof.jpg";
 
 import img3a from "../assets/picture/room6/pic_r6.jpg";
+import img3b from "../assets/picture/room6/t-r6.jpg";
+import img3c from "../assets/picture/room6/room 6.jpg" ;
 
 import img4a from "../assets/picture/room7/r-7.jpg";
 import img4b from "../assets/picture/room7/IMG_5745.jpg";
 import img4c from "../assets/picture/hotel/front_pic.jpg";
+
+import img5a from "../assets/picture/room4/pic_r4.jpg"
+import img5b from "../assets/picture/room4/r-4.jpg"
+import img5c from "../assets/picture/room4/t_r4.jpg"
 
 export const rooms: Room[] = [
   {
@@ -72,7 +78,7 @@ export const rooms: Room[] = [
   {
     id: 3,
     slug: "himalayan-breeze-room",
-    name: "Himalayan Breeze Room",
+    name: "Himalayan Breeze Room-B",
     price: "NPR 14,000 / night",
     description:
       "Balcony-facing room that captures the cool mountain breeze and frames the snow line during winter.",
@@ -84,7 +90,7 @@ export const rooms: Room[] = [
     view: "Direct Himalayan range",
     amenities: ["Heated shower", "Balcony daybed", "Tea & coffee bar", "Room service", "Yoga mat set"],
     policies: ["Check-in after 2:00 PM", "Check-out before 11:00 AM", "No smoking inside", "Child-friendly"],
-    images: [img3a,]
+    images: [img3a, img3b, img3c]
   },
   {
     id: 4,
@@ -109,6 +115,29 @@ export const rooms: Room[] = [
     policies: ["Check-in after 2:00 PM", "Check-out before 11:00 AM", "Not suitable for toddlers", "No parties"],
     images: [img4a, img4b, img4c],
   },
+  {
+    id: 5,
+    slug: "garden-view-room",
+    name: "Garden View Room",
+    price: "NPR 16,200 / night",
+    description:
+      "The Garden View Room offers a peaceful retreat overlooking lush greenery and beautifully landscaped gardens. Designed for comfort and relaxation, the room blends natural elements with modern amenities to create a warm, soothing environment.",
+    longDescription:
+      "Inside the room, a plush queen or king-sized bed stands at the center, dressed with crisp linens and comfortable pillows. A cozy seating corner near the window allows guests to enjoy the garden scenery while sipping tea or reading. Thoughtful touches—like handcrafted lamps, local artwork, and natural textures—add character and warmth to the space.",
+    size: "38 m²",
+    capacity: "2 guests",
+    bedType: "Queen bed",
+    view: "Garden view ",
+    amenities: [
+      
+      "Telescope for night sky",
+      "Complimentary hot water bags",
+      
+      "Daily housekeeping",
+    ],
+    policies: ["Check-in after 2:00 PM", "Check-out before 11:00 AM"],
+    images: [img5a, img5b, img5c],
+  }
 ];
 
 export const getRoomById = (id: number) => rooms.find((room) => room.id === id);

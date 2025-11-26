@@ -205,15 +205,11 @@ const AdminGalleryManager: React.FC = () => {
                 className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="">Select Category</option>
-                {Array.from(new Set(photos.map((p) => p.category))).map((cat) => (
+                {Array.from(new Set([...photos.map((p) => p.category), "Rooms", "Food", "Nature", "People"])).sort().map((cat) => (
                   <option key={cat} value={cat}>
                     {cat}
                   </option>
                 ))}
-                <option value="Rooms">Rooms</option>
-                <option value="Food">Food</option>
-                <option value="Nature">Nature</option>
-                <option value="People">People</option>
               </select>
             </div>
           </div>

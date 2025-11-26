@@ -7,12 +7,22 @@ export type GalleryPhoto = {
 
 import sunrise from "../assets/picture/other/sunrise.png";
 import sunset from "../assets/picture/other/sunset.jpg";
+import nature1a from "../assets/picture/nature/IMG_1098.jpg"
+import nature1b from "../assets/picture/nature/IMG_1099.jpg"
+import nature1c from "../assets/picture/nature/IMG_1100.jpg"
+import nature1d from "../assets/picture/nature/sunrise-view.jpg"
+import nature1e from "../assets/picture/nature/sunrise-view-1.jpg"
 import roof from "../assets/picture/hotel/roof.jpg";
-import frontPic from "../assets/picture/hotel/front_pic.jpg";
+import frontPic from "../assets/picture/other/second.jpg";
 import pancake from "../assets/picture/food/pancake.jpg";
 import khajaSet from "../assets/picture/food/khaja_set.jpg";
 import room3 from "../assets/picture/room3/r-3.jpg";
+import room3a from "../assets/picture/room3/room 3.jpg"
+import room3b from "../assets/picture/room3/t_r3_2_bath_3.jpg"
+import room4a from "../assets/picture/room4/3.jpg"
+import room5a from "../assets/picture/room5/room5.2.jpg"
 import room5 from "../assets/picture/room5/pic_r5.jpg";
+import room6a from "../assets/picture/room6/pic_r6_1.jpg"
 import room7 from "../assets/picture/room7/r-7.jpg";
 
 export const defaultGalleryPhotos: GalleryPhoto[] = [
@@ -23,8 +33,38 @@ export const defaultGalleryPhotos: GalleryPhoto[] = [
     category: "Rooms",
   },
   {
+    id: "room-heritage",
+    src: room3a,
+    caption: "Tamang Heritage Room—family-ready comfort with rustic charm.",
+    category: "Rooms",
+  },
+  {
+    id: "room-heritage",
+    src: room3b,
+    caption: "Tamang Heritage Room—family-ready comfort with rustic charm.",
+    category: "Rooms",
+  },
+  {
+    id: "room-garden",
+    src: room4a,
+    caption: "Fresh air and a serene atmosphere perfect for unwinding",
+    category: "Rooms",
+  },
+  {
     id: "room-himalayan",
     src: room5,
+    caption: "Himalayan Breeze—balcony mornings with king-size ease.",
+    category: "Rooms",
+  },
+  {
+    id: "room-himalayan",
+    src: room5a,
+    caption: "Himalayan Breeze—balcony mornings with king-size ease.",
+    category: "Rooms",
+  },
+  {
+    id: "room-himalayan",
+    src: room6a,
     caption: "Himalayan Breeze—balcony mornings with king-size ease.",
     category: "Rooms",
   },
@@ -47,8 +87,38 @@ export const defaultGalleryPhotos: GalleryPhoto[] = [
     category: "Nature",
   },
   {
+    id: "nature-sunrise",
+    src: nature1d,
+    caption: "Golden sunrise spilling over Dhulikhel’s layered ridges.",
+    category: "Nature",
+  },
+  {
+    id: "nature-sunrise",
+    src: nature1e,
+    caption: "Golden sunrise spilling over Dhulikhel’s layered ridges.",
+    category: "Nature",
+  },
+  {
     id: "nature-rooftop",
     src: roof,
+    caption: "Open terrace draped in prayer flags and forest breeze.",
+    category: "Nature",
+  },
+  {
+    id: "nature-rooftop",
+    src: nature1a,
+    caption: "Open terrace draped in prayer flags and forest breeze.",
+    category: "Nature",
+  },
+  {
+    id: "nature-rooftop",
+    src: nature1b,
+    caption: "Open terrace draped in prayer flags and forest breeze.",
+    category: "Nature",
+  },
+  {
+    id: "nature-rooftop",
+    src: nature1c,
     caption: "Open terrace draped in prayer flags and forest breeze.",
     category: "Nature",
   },
