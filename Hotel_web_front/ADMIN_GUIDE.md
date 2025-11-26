@@ -46,7 +46,10 @@ src/pages/Admin/
 2. **Image Format**: Images are stored as base64 strings for easy persistence
 3. **Client Display**: The gallery page loads photos from localStorage (if available) or uses defaults
 4. **Persistence**: Changes persist across browser sessions
-5. **Category Dropdown**: Dynamically shows all existing categories from current gallery
+5. **Category Dropdown**: 
+   - Dynamically shows all existing categories from current gallery + preset categories (Rooms, Food, Nature, People)
+   - Automatically removes duplicates if a preset category already exists in your photos
+   - Displays categories in alphabetical order for easy navigation
 6. **Password Protected**: Simple password protection (change in AdminLogin.tsx)
 
 ## Changing Admin Password
@@ -90,9 +93,10 @@ const ADMIN_PASSWORD = "your_secure_password_123";
 - Try refreshing the page
 
 **Q: Category dropdown is empty?**
-- The dropdown is populated from existing gallery photos
-- If you're adding the first photo, select from preset categories: Rooms, Food, Nature, People
-- After adding a photo, custom categories will appear in the dropdown
+- The dropdown is populated from existing gallery photos + preset categories (Rooms, Food, Nature, People)
+- If you're adding the first photo, select from preset categories
+- After adding a photo, all categories will appear in the dropdown
+- Duplicates are automatically removed to prevent showing the same category twice
 
 **Q: Can't access admin panel?**
 - Make sure you're at `http://localhost:5174/admin`
