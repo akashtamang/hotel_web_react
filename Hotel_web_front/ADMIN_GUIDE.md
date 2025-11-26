@@ -83,6 +83,24 @@ const ADMIN_PASSWORD = "your_secure_password_123";
 
 ## Troubleshooting
 
+### Gallery Performance Improvements
+
+- **What changed:** The gallery received several frontend optimizations to remove stutter while scrolling and reduce layout shifts.
+   - Images now use `loading="lazy"` and `decoding="async"` so the browser doesn't decode every image while scrolling.
+   - Hover transforms were reduced (smaller scale and shorter transitions) to avoid expensive repaints.
+   - GPU/compositing hints were added (`will-change: transform, opacity` and `transform: translateZ(0)`) to promote images to the compositor thread.
+   - Fixed image heights are used to prevent layout shifts while images load.
+   - Lightbox (the large preview) loads the selected image eagerly to avoid a delayed display when opened.
+
+- **How to verify:** Open the gallery page and scroll — scrolling should feel smoother. For a detailed check use DevTools → Performance and record during scrolling; look for fewer long main-thread tasks and smaller paint costs.
+
+- **Further recommendations:**
+   - Compress images and convert to WebP to dramatically reduce size (especially important when storing base64 in `localStorage`).
+   - Generate and show low-quality placeholders (LQIP) while full images load for a nicer UX.
+   - Move image storage to a backend or CDN rather than base64 in `localStorage` (best for production).
+   - For very large galleries implement pagination or virtualization (e.g. `react-window`) to avoid rendering too many DOM nodes at once.
+   - Add image optimization/resize on upload in the admin panel to keep client payloads small.
+
 **Q: What image formats are supported?**
 - JPG, PNG, WebP, GIF, and other common image formats are supported
 - Maximum file size: 5MB
