@@ -42,9 +42,9 @@ const Gallery: React.FC = () => {
         <h1 className="text-4xl font-bold text-gray-800 mb-3">
           📸 Our <span className="text-emerald-600">Photo Gallery</span>
         </h1>
-        <p className="text-gray-600 text-lg">
+        {/* <p className="text-gray-600 text-lg">
           Explore beautiful moments from our homestay and surroundings.
-        </p>
+        </p> */}
       </div>
 
       {/* Filter Buttons */}
@@ -69,13 +69,17 @@ const Gallery: React.FC = () => {
         {filteredPhotos.map((photo, index) => (
           <div
             key={index}
-            className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform transition-all duration-300 cursor-pointer"
+            style={{ transform: 'translateZ(0)' }}
             onClick={() => setSelectedImage(photo)}
           >
             <img
               src={photo.src}
               alt={photo.caption}
-              className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+              style={{ willChange: 'transform, opacity' }}
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 brightness-95"
             />
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <p className="text-white text-center text-base px-2">
@@ -96,7 +100,11 @@ const Gallery: React.FC = () => {
             <img
               src={selectedImage.src}
               alt={selectedImage.caption}
+              loading="eager"
+              decoding="async"
+              style={{ willChange: 'transform, opacity' }}
               className="rounded-lg w-full max-h-[80vh] object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             />
             <p className="text-center text-white text-lg mt-4">
               {selectedImage.caption}
